@@ -1,26 +1,74 @@
 {
   "project_info": {
-    "project_number": "797598936397",
-    "project_id": "haarsalon-1e101",
-    "storage_bucket": "haarsalon-1e101.firebasestorage.app"
+    "project_number": "918655571270",
+    "firebase_url": "https://staynowapp1-default-rtdb.firebaseio.com",
+    "project_id": "staynowapp1",
+    "storage_bucket": "staynowapp1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:797598936397:android:4309b16cd9117b76d89b04",
+        "mobilesdk_app_id": "1:918655571270:android:847929817d9fa5ececc147",
         "android_client_info": {
           "package_name": "com.jast.haarsalon"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "918655571270-52va10s94e1ne4i20b0mrauqmp7c5ttg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jast.haarsalon",
+            "certificate_hash": "76ab593bbd26c04dfe04973e295e734d6fbab419"
+          }
+        },
+        {
+          "client_id": "918655571270-u0aorv0f23meel967mfomasbc5e2ngns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDtKEBYM3cE61SEhVAJJTqV49uUzns4fq4"
+          "current_key": "AIzaSyATIFDaoVau3TRnI27yqMRBdCncEvm0fh4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918655571270-u0aorv0f23meel967mfomasbc5e2ngns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918655571270:android:642ea308e69d603becc147",
+        "android_client_info": {
+          "package_name": "com.ph32395.staynow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918655571270-u0aorv0f23meel967mfomasbc5e2ngns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATIFDaoVau3TRnI27yqMRBdCncEvm0fh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918655571270-u0aorv0f23meel967mfomasbc5e2ngns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

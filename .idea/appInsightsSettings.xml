@@ -23,9 +23,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.jast.haarsalon" />
-                  <option name="mobileSdkAppId" value="1:797598936397:android:4309b16cd9117b76d89b04" />
-                  <option name="projectId" value="haarsalon-1e101" />
-                  <option name="projectNumber" value="797598936397" />
+                  <option name="mobileSdkAppId" value="1:918655571270:android:847929817d9fa5ececc147" />
+                  <option name="projectId" value="staynowapp1" />
+                  <option name="projectNumber" value="918655571270" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
