@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
-    id("com.google.gms.google-services")
-    id("com.google.dagger.hilt.android")
-    id("com.google.firebase.crashlytics")
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.android.hilt)
+    alias(libs.plugins.firebase.crashlytics)
 }
 
 android {
@@ -21,11 +21,17 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = false // set rules in proguard-rules.pro before enabling this
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+
+        debug {
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
     compileOptions {
@@ -41,29 +47,29 @@ android {
 
 dependencies {
 
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.firebase:firebase-firestore")
-    implementation("com.google.firebase:firebase-storage")
-    implementation("com.google.firebase:firebase-database")
-    implementation("com.google.firebase:firebase-messaging")
-    implementation("com.google.firebase:firebase-crashlytics")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.crashlytics)
 
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    annotationProcessor("com.google.dagger:hilt-compiler:2.51.1")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.7")
+    implementation(libs.hilt.android)
+    annotationProcessor(libs.hilt.compiler)
+    implementation(libs.lifecycle.extensions)
+    implementation(libs.lifecycle.viewmodel)
 
-    implementation("io.github.ParkSangGwon:tedpermission-rx3:3.4.2")
-    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
-    implementation("io.reactivex.rxjava3:rxjava:3.1.5")
-    implementation("com.jakewharton.timber:timber:4.7.1")
+    implementation(libs.tedpermission.rx3)
+    implementation(libs.rxandroid)
+    implementation(libs.rxjava)
+    implementation(libs.timber)
 
 
     implementation(libs.appcompat)

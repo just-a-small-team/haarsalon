@@ -8,6 +8,17 @@
     android:background="?attr/colorOnPrimary"
     tools:context=".ui.auth.login.LoginActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="?attr/colorPrimary" />
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTiL"
         style="@style/Widget.Material3.TextInputLayout.FilledBox"
@@ -19,7 +30,7 @@
         app:cursorColor="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEt"

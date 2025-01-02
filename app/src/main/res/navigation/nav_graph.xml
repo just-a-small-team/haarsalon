@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.jast.haarsalon.ui.main.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_booking"
+        android:name="com.jast.haarsalon.ui.main.booking.BookingFragment"
+        android:label="Booking"
+        tools:layout="@layout/fragment_booking" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.jast.haarsalon.ui.main.gallery.GalleryFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.jast.haarsalon.ui.main.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

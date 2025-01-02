@@ -1,7 +1,6 @@
 package com.jast.haarsalon.ui.main;
 
 import android.Manifest;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.gun0912.tedpermission.rx3.TedPermission;
@@ -23,10 +25,12 @@ import timber.log.Timber;
 @AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         EdgeToEdge.enable(this);
         setContentView(view);
@@ -35,11 +39,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        setupNavigation();
         registerNotification();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestNotificationPermission();
-        }
+        requestNotificationPermission();
+    }
+
+    private void setupNavigation() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
+
     }
 
     private void registerNotification() {

@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
+        binding.toolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+
 
         binding.loginBtn.setOnClickListener(v -> {
             String email = Objects.requireNonNull(binding.emailEt.getText()).toString();
@@ -54,10 +56,11 @@ public class LoginActivity extends AppCompatActivity {
                         binding.progressBar.setVisibility(View.VISIBLE);
                         break;
                     case SUCCESS:
-                        ToastUtils.showSuccess(this, userResource.message);
+                        ToastUtils.showSuccess(this, "Login successful");
                         binding.progressBar.setVisibility(View.GONE);
                         Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                         break;
                     case ERROR:
                         binding.progressBar.setVisibility(View.GONE);

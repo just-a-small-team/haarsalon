@@ -41,6 +41,8 @@ public class SignupActivity extends AppCompatActivity {
             return insets;
         });
 
+        binding.toolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+
         binding.registerBtn.setOnClickListener(v -> {
             String email = Objects.requireNonNull(binding.emailEt.getText()).toString();
             String password = Objects.requireNonNull(binding.passwordEt.getText()).toString();
@@ -53,10 +55,11 @@ public class SignupActivity extends AppCompatActivity {
                         binding.progressBar.setVisibility(View.VISIBLE);
                         break;
                     case SUCCESS:
-                        ToastUtils.showSuccess(this, userResource.message);
+                        ToastUtils.showSuccess(this, "Registration successful");
                         binding.progressBar.setVisibility(View.GONE);
                         Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                         break;
                     case ERROR:
                         ToastUtils.showError(this, userResource.message);
